@@ -1,0 +1,41 @@
+:root {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #e7e3d7;
+  background: #10241f;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: radial-gradient(circle at 80% 10%, #24483d 0, #10241f 42%, #091613 100%); }
+button { font: inherit; }
+.app-shell { max-width: 1120px; margin: 0 auto; padding: 6rem 2rem 4rem; }
+.hero { max-width: 700px; animation: rise 500ms ease both; }
+.eyebrow { color: #d6a85c; font: 700 .7rem/1.2 "Trebuchet MS", sans-serif; letter-spacing: .14em; margin: 0 0 1rem; }
+h1 { font-size: clamp(3.5rem, 9vw, 7.5rem); font-weight: 400; line-height: .88; letter-spacing: -.04em; margin: 0; }
+h1 em { color: #d6a85c; font-style: normal; }
+.intro { color: #9db0a6; font: 1rem/1.6 "Trebuchet MS", sans-serif; max-width: 390px; margin: 2rem 0 0; }
+.game-layout { display: grid; grid-template-columns: minmax(300px, 560px) 1fr; gap: 5rem; align-items: start; margin-top: 5rem; animation: rise 650ms 100ms ease both; }
+.game-panel { border-top: 1px solid #45665a; padding-top: 1.1rem; }
+.game-panel__topline { display: flex; justify-content: space-between; color: #9db0a6; font: 700 .72rem "Trebuchet MS", sans-serif; letter-spacing: .12em; margin-bottom: 1rem; }
+.game-panel__topline b { color: #e7e3d7; }
+.board { display: grid; grid-template-columns: repeat(3, 1fr); aspect-ratio: 1; border: 1px solid #45665a; background: #18372f; }
+.cell { min-width: 0; border: 0; border-right: 1px solid #45665a; border-bottom: 1px solid #45665a; color: #e7e3d7; background: transparent; cursor: pointer; font-size: clamp(3.2rem, 10vw, 7rem); line-height: 1; transition: background 160ms ease, color 160ms ease; }
+.cell:nth-child(3n) { border-right: 0; }
+.cell:nth-child(n+7) { border-bottom: 0; }
+.cell:not(:disabled):hover, .cell:focus-visible { background: #29584b; outline: 2px solid #d6a85c; outline-offset: -2px; }
+.cell:disabled { cursor: default; }
+.cell--winner { color: #d6a85c; background: #234c40; }
+.status { color: #d6a85c; font: 700 .85rem "Trebuchet MS", sans-serif; margin: 1.2rem 0; }
+.reset { border: 1px solid #d6a85c; color: #d6a85c; background: transparent; cursor: pointer; padding: .7rem 1rem; font: 700 .75rem "Trebuchet MS", sans-serif; text-transform: uppercase; letter-spacing: .1em; }
+.reset:hover, .reset:focus-visible { color: #10241f; background: #d6a85c; outline: none; }
+.insight-panel { border-top: 1px solid #45665a; padding-top: 1.1rem; max-width: 300px; }
+h2 { font-size: 2rem; font-weight: 400; margin: 0 0 1rem; }
+.aside-copy, .stats__empty, .stats__reason { color: #9db0a6; font: .88rem/1.6 "Trebuchet MS", sans-serif; }
+.stats { margin-top: 2.5rem; border-top: 1px solid #45665a; padding-top: 1rem; }
+.stats__heading { display: flex; justify-content: space-between; gap: 1rem; color: #9db0a6; font: .75rem "Trebuchet MS", sans-serif; }
+.stats__heading strong { color: #d6a85c; }
+.probability { display: grid; grid-template-columns: 1fr auto; gap: .4rem; color: #c8d2ca; font: .75rem "Trebuchet MS", sans-serif; margin-top: 1rem; }
+.probability__track { grid-column: 1 / -1; height: 4px; background: #2a4b41; }
+.probability__track i { display: block; height: 100%; background: #d6a85c; }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 760px) { .app-shell { padding: 3.5rem 1.25rem; } .game-layout { grid-template-columns: 1fr; gap: 3rem; margin-top: 3.5rem; } .insight-panel { max-width: none; } }
