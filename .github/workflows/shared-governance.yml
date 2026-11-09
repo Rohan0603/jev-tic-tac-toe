@@ -1,0 +1,10 @@
+name: Shared governance
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  governance:
+    uses: mission-control-panel/shared-workflows/.github/workflows/governance-reusable.yml@main
