@@ -1,5 +1,4 @@
-name: Shared governance
-
+name: Shared governance smoke
 on:
   pull_request:
   push:
@@ -7,4 +6,4 @@ on:
 
 jobs:
   governance:
-    uses: mission-control-panel/shared-workflows/.github/workflows/governance-reusable.yml@main
+    uses: mission-control-panel/shared-workflows/.github/workflows/governance-smoke-reusable.yml@main
